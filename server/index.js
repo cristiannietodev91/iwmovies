@@ -19,7 +19,7 @@ import App from "../src/App";
 import counterReducer from '../src/features/counter/counterSlice';
 import moviesReducer from '../src/features/movies/moviesSlice';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
-import autoMergeLevel1 from 'redux-persist/lib/stateReconciler/autoMergeLevel1'
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 
 import { StaticRouter } from 'react-router-dom';
 
@@ -44,7 +44,7 @@ app.get("/", async (req, res) => {
     key: 'root',
     version: 1,
     storage : new CookieStorage(cookieJar,{}),
-    stateReconciler: autoMergeLevel1
+    stateReconciler: autoMergeLevel2
   };
 
   let preloadedState;
